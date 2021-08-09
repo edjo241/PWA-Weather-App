@@ -1,0 +1,22 @@
+
+
+.App{
+   height: 650px ;
+   background-image: url("https://thumbs.dreamstime.com/b/drops-water-window-glass-rain-dramatic-blurred-sunset-background-idyllic-tranquil-nature-wallpaper-weather-151547516.jpg");
+   background-position: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.weather__searchBox{
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 7px;
+  width: 100%;
+}
+input:focus{
+  border: solid;
+  border-color: rgb(43, 43, 212);
+}
