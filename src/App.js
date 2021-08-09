@@ -1,31 +1,23 @@
 
-import { useState } from 'react';
+import {BrowserRouter as Router,Route,Switch } from 'react-router-dom';
 import './App.css';
-import {fetchWeather} from './api/fetchWeather'
+import Rain from './Rain';
+import Home from './Home';
 
 function App() {
-  const [city,setCity]=useState("");
-  const [weather,setWeather]=useState("");
-  console.log(city);
-
-  const search= async(e)=>{
-    if(e.key ==="Enter"){
-      const data= await fetchWeather(city);
-      setWeather(data);
-      setCity("");
-      console.log(data);
-      
-    }
-  }
 
   return (
-    <div className="App">
-      <div className="weather__search">
-        <input  className="weather__searchBox" type="text" placeholder="Search city for weather"  value={city} onChange={(e)=> setCity(e.target.value)} 
-        onKeyPress={search}
-        />
-      </div>
+     
+    <div>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home}></Route>
+          <Route path="/rain" component={Rain}></Route>
+        </Switch>
+      </Router>
     </div>
+  
+    
   );
 }
 
