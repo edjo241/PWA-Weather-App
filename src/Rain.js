@@ -7,9 +7,6 @@ import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
 
 function Rain() {
     let history=useHistory();
-    const onChange=()=>{
-        console.log("clicked");
-    }
     return (
         <div className="rain__background">
                 

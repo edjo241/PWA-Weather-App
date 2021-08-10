@@ -7,7 +7,7 @@ export const initialState = {
       case "ADD_WEATHER":
           
         return { ...state, weatherInfo: action.weather};
-        break;
+      
       
       default:
         return state;
