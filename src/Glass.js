@@ -10,14 +10,17 @@ function Glass() {
             <div className="city">
                 <h2 className="city__name">
                     <span>{weatherInfo?.name}</span>
-                    <sup>{weatherInfo?.sys.country}</sup>
+                    <sup>{weatherInfo?.sys?.country}</sup>
                 </h2>
                 <div className="temp">
                     <h1>
-                        <span>{weatherInfo?.main.temp}</span>
-                        <sup>&deg;</sup>
+                        <span>{weatherInfo?.main?.temp}</span>
+                        <sup>&deg;C</sup>
                     </h1>
-                    <h3 className="weather__type">{weatherInfo?.weather[0].main}</h3>
+                    <h3 className="weather__type">{weatherInfo?.weather?.main}</h3>
+                </div>
+                <div className="icon">
+                    <img className="icon__image" src={`https://openweathermap.org/img/wn/${weatherInfo?.weather?.icon}@2x.png`} alt="icon"/>
                 </div>
             </div>
         </div>

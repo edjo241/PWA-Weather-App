@@ -6,9 +6,8 @@ import SearchIcon from '@material-ui/icons/Search';
 import { useStateValue } from "./StateProvider";
 
 function Home() {
-    const [{weatherInfo}, dispatch] = useStateValue();
+  const [{weatherInfo}, dispatch] = useStateValue();
   const [city,setCity]=useState("");
-  console.log(city);
   let history=useHistory();
 
   const search= async(e)=>{
@@ -21,8 +20,18 @@ function Home() {
       });
     
       
-      if(data.weather[0].main === "Rain"){
+      if(data.weather[0].main === "Rain"||data.weather[0].main === "Thunderstorm"){
         history.push("/rain");
+      }
+
+      else if(data.weather[0].main=== "Clouds"||data.weather[0].main=== "Clear"){
+        history.push("/sun");
+      }
+      else if(data.weather[0].main==="Mist"||data.weather[0].main==="Snow"||data.weather[0].main==="Fog"){
+        history.push("/mist")
+      }
+      else{
+        history.push("./sun");
       }
       
     }
